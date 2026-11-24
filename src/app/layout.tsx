@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display, Press_Start_2P } from "next/font/google";
+import {
+  Manrope,
+  Playfair_Display,
+  Press_Start_2P,
+  VT323,
+} from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -21,6 +26,13 @@ const pressStart = Press_Start_2P({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-press-start",
+  display: "swap",
+});
+
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-vt323",
   display: "swap",
 });
 
@@ -47,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${manrope.variable} ${pressStart.variable}`}
+      className={`${playfair.variable} ${manrope.variable} ${pressStart.variable} ${vt323.variable}`}
     >
       <body className="min-h-screen bg-porcelain text-ink antialiased selection:bg-powder-pink/70 selection:text-ink">
         <a href="#main-content" className="skip-link font-pixel text-[10px]">

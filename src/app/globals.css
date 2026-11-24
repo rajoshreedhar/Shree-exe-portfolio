@@ -14,9 +14,21 @@
   --chrome: #c7c7c4;
   --chrome-light: #e4e3df;
 
+  /* Cozy Cream & Beige Retro Arcade Hero Palette */
+  --arcade-cream: #fbf5e6;
+  --arcade-cream-soft: #fffbf0;
+  --arcade-beige: #efe2ca;
+  --arcade-beige-deep: #e2cfa9;
+  --arcade-cocoa: #2c211b;
+  --arcade-walnut: #5e4b3e;
+  --arcade-amber: #d99b38;
+  --arcade-amber-soft: #f5dda3;
+  --arcade-sage: #5c7d5e;
+
   --font-editorial: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-body: var(--font-manrope), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-pixel: var(--font-press-start), monospace;
+  --font-arcade: var(--font-vt323), monospace;
 
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-panel: cubic-bezier(0.4, 0, 0.2, 1);
@@ -34,6 +46,15 @@
   --color-stone: var(--stone);
   --color-stone-text: var(--stone-text);
   --color-chrome: var(--chrome);
+  --color-arcade-cream: var(--arcade-cream);
+  --color-arcade-cream-soft: var(--arcade-cream-soft);
+  --color-arcade-beige: var(--arcade-beige);
+  --color-arcade-beige-deep: var(--arcade-beige-deep);
+  --color-arcade-cocoa: var(--arcade-cocoa);
+  --color-arcade-walnut: var(--arcade-walnut);
+  --color-arcade-amber: var(--arcade-amber);
+  --color-arcade-amber-soft: var(--arcade-amber-soft);
+  --color-arcade-sage: var(--arcade-sage);
   --font-serif: var(--font-editorial);
   --font-sans: var(--font-body);
   --font-mono: var(--font-pixel);
@@ -131,6 +152,68 @@ li {
 .font-pixel {
   font-family: var(--font-pixel);
   letter-spacing: 0.02em;
+}
+
+.font-arcade {
+  font-family: var(--font-arcade);
+  letter-spacing: 0.03em;
+}
+
+/* Cozy Cream & Beige Retro Arcade Surfaces */
+.arcade-hero-bg {
+  background-color: var(--arcade-cream);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(245, 221, 163, 0.42), transparent 46%),
+    radial-gradient(circle at 84% 24%, rgba(226, 207, 169, 0.5), transparent 50%),
+    radial-gradient(rgba(44, 33, 27, 0.065) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 18px 18px;
+}
+
+.arcade-pixel-box {
+  border: 2px solid var(--arcade-cocoa);
+  box-shadow: 4px 4px 0 var(--arcade-cocoa);
+}
+
+.arcade-cabinet {
+  border: 2px solid var(--arcade-cocoa);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 251, 240, 0.8),
+    6px 6px 0 var(--arcade-cocoa);
+}
+
+.arcade-push-btn {
+  box-shadow: 0 4px 0 var(--arcade-cocoa);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.arcade-push-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--arcade-cocoa);
+}
+
+.arcade-crt-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(44, 33, 27, 0) 0px,
+    rgba(44, 33, 27, 0) 3px,
+    rgba(44, 33, 27, 0.09) 3px,
+    rgba(44, 33, 27, 0.09) 4px
+  );
+}
+
+.arcade-pixel-border-strip {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--arcade-beige-deep) 0px,
+    var(--arcade-beige-deep) 12px,
+    var(--arcade-cream) 12px,
+    var(--arcade-cream) 24px
+  );
 }
 
 /* Refined editorial frame with soft grounded depth */
@@ -297,6 +380,17 @@ li {
   }
 }
 
+@keyframes arcadeBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.22;
+  }
+}
+
 .animate-editorial-reveal {
   animation: editorialReveal 580ms var(--ease-editorial) both;
 }
@@ -337,6 +431,10 @@ li {
   animation: twinkleStar 3.2s steps(2, end) infinite;
 }
 
+.animate-arcade-blink {
+  animation: arcadeBlink 1.15s steps(2, end) infinite;
+}
+
 /* Reduced motion: calm opacity-only transitions and static poses (preserves clear state feedback) */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -351,7 +449,8 @@ li {
   .animate-pixel-float,
   .animate-dialogue-pop,
   .animate-sparkle-once,
-  .animate-twinkle {
+  .animate-twinkle,
+  .animate-arcade-blink {
     animation: none !important;
   }
   * {

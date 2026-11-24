@@ -155,3 +155,48 @@ export function PixelSparkleIcon({ className = "", size = 14 }: PixelIconProps) 
     </svg>
   );
 }
+
+export function PixelDpadIcon({ className = "", size = 34 }: PixelIconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 18 18"
+      fill="none"
+      aria-hidden="true"
+      className={`pixel-art shrink-0 ${className}`}
+      shapeRendering="crispEdges"
+    >
+      <rect x="6" y="1" width="6" height="16" fill="#2C211B" />
+      <rect x="1" y="6" width="16" height="6" fill="#2C211B" />
+      <rect x="7" y="2" width="4" height="14" fill="#46362C" />
+      <rect x="2" y="7" width="14" height="4" fill="#46362C" />
+      <rect x="8" y="3" width="2" height="2" fill="#EFE2CA" fillOpacity="0.65" />
+      <rect x="8" y="13" width="2" height="2" fill="#EFE2CA" fillOpacity="0.65" />
+      <rect x="3" y="8" width="2" height="2" fill="#EFE2CA" fillOpacity="0.65" />
+      <rect x="13" y="8" width="2" height="2" fill="#EFE2CA" fillOpacity="0.65" />
+      <rect x="7" y="7" width="4" height="4" fill="#2C211B" />
+      <rect x="8" y="8" width="2" height="2" fill="#5E4B3E" />
+    </svg>
+  );
+}
+
+export function PixelPlayIcon({ className = "", size = 12 }: PixelIconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className={`pixel-art shrink-0 ${className}`}
+      shapeRendering="crispEdges"
+    >
+      <rect x="2" y="1" width="2" height="10" fill="currentColor" />
+      <rect x="4" y="2" width="2" height="8" fill="currentColor" />
+      <rect x="6" y="3" width="2" height="6" fill="currentColor" />
+      <rect x="8" y="4" width="2" height="4" fill="currentColor" />
+      <rect x="10" y="5" width="1" height="2" fill="currentColor" />
+    </svg>
+  );
+}
