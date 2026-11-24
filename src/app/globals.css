@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+:root {
+  --porcelain: #f4efe7;
+  --porcelain-soft: #faf7f2;
+  --porcelain-deep: #eae2d5;
+  --ink: #24201f;
+  --ink-soft: #36302e;
+  --powder-pink: #d9bfc0;
+  --burgundy: #843f49;
+  --burgundy-deep: #6b3039;
+  --stone: #aaa49c;
+  --stone-text: #625b55;
+  --chrome: #c7c7c4;
+  --chrome-light: #e4e3df;
+
+  --font-editorial: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-manrope), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-pixel: var(--font-press-start), monospace;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-panel: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-porcelain: var(--porcelain);
+  --color-porcelain-soft: var(--porcelain-soft);
+  --color-porcelain-deep: var(--porcelain-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-powder-pink: var(--powder-pink);
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-deep: var(--burgundy-deep);
+  --color-stone: var(--stone);
+  --color-stone-text: var(--stone-text);
+  --color-chrome: var(--chrome);
+  --font-serif: var(--font-editorial);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-pixel);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--porcelain);
+  color: var(--ink);
+  scrollbar-color: var(--burgundy) var(--porcelain-deep);
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--porcelain);
+  color: var(--ink);
+  caret-color: var(--burgundy);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Browser surfaces themed to Pixel Chic palette */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--porcelain-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stone);
+  border: 2px solid var(--porcelain-deep);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--burgundy);
+}
+
+::selection {
+  background: rgba(217, 191, 192, 0.75);
+  color: var(--ink);
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+dd,
+li {
+  text-wrap: pretty;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle paper grain seasoning */
+.paper-grain {
+  background-image: radial-gradient(rgba(36, 32, 31, 0.04) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Refined dark editorial surface (no generated grid-line signature) */
+.ink-surface {
+  background-color: var(--ink);
+  background-image: radial-gradient(
+    circle at 82% 16%,
+    rgba(132, 63, 73, 0.16),
+    transparent 42%
+  );
+}
+
+/* Pixel-sharp rendering for Shree.exe sprites & pixel artwork */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Typography roles */
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.02em;
+}
+
+/* Refined editorial frame with soft grounded depth */
+.pixel-window-frame {
+  border: 1px solid rgba(36, 32, 31, 0.85);
+  box-shadow: 0 12px 28px -14px rgba(36, 32, 31, 0.24),
+    0 2px 6px rgba(36, 32, 31, 0.08);
+}
+
+.pixel-window-frame-dark {
+  border: 1px solid rgba(199, 199, 196, 0.28);
+  box-shadow: 0 16px 34px -14px rgba(0, 0, 0, 0.52);
+}
+
+.chrome-hairline {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--chrome) 18%,
+    #ffffff 50%,
+    var(--chrome) 82%,
+    transparent 100%
+  );
+}
+
+/* Visible keyboard focus rings */
+:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+/* Signature Animations — Purposeful & Stepped where pixel-native */
+@keyframes editorialReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes maskFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shreeIdleBreath {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes shreeHop {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  55% {
+    transform: translateY(0px) scale(0.98);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes shreeWaveSway {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(-3deg) translateY(-3px);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-4px);
+  }
+  75% {
+    transform: rotate(-2deg) translateY(-2px);
+  }
+}
+
+@keyframes shreeMusicBob {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1.5deg);
+  }
+}
+
+@keyframes pixelFloatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes dialoguePop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkleOnce {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.15) rotate(25deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7) rotate(60deg);
+  }
+}
+
+@keyframes twinkleStar {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.animate-editorial-reveal {
+  animation: editorialReveal 580ms var(--ease-editorial) both;
+}
+
+.animate-mask-reveal {
+  animation: maskFadeIn 620ms var(--ease-editorial) both;
+}
+
+.animate-shree-idle {
+  animation: shreeIdleBreath 2.6s steps(2, end) infinite;
+}
+
+.animate-shree-hop {
+  animation: shreeHop 560ms steps(6, end) 1;
+}
+
+.animate-shree-wave {
+  animation: shreeWaveSway 660ms steps(4, end) 2;
+}
+
+.animate-shree-music {
+  animation: shreeMusicBob 1.3s steps(4, end) infinite;
+}
+
+.animate-pixel-float {
+  animation: pixelFloatUp 1.8s steps(6, end) infinite;
+}
+
+.animate-dialogue-pop {
+  animation: dialoguePop 200ms var(--ease-editorial) both;
+}
+
+.animate-sparkle-once {
+  animation: sparkleOnce 460ms steps(5, end) both;
+}
+
+.animate-twinkle {
+  animation: twinkleStar 3.2s steps(2, end) infinite;
+}
+
+/* Reduced motion: calm opacity-only transitions and static poses (preserves clear state feedback) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-editorial-reveal,
+  .animate-mask-reveal,
+  .animate-shree-idle,
+  .animate-shree-hop,
+  .animate-shree-wave,
+  .animate-shree-music,
+  .animate-pixel-float,
+  .animate-dialogue-pop,
+  .animate-sparkle-once,
+  .animate-twinkle {
+    animation: none !important;
+  }
+  * {
+    transition-property: opacity, background-color, border-color, color;
+    transition-duration: 140ms;
+  }
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--porcelain);
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--powder-pink);
+  transition: top 160ms ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}

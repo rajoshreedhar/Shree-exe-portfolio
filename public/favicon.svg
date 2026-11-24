@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" rx="4" fill="#24201F"/>
+  <rect x="2" y="2" width="28" height="28" fill="none" stroke="#D9BFC0" stroke-width="1"/>
+  <!-- Pixel star inspired by Shree.exe -->
+  <rect x="15" y="5" width="2" height="4" fill="#F3D382"/>
+  <rect x="13" y="9" width="6" height="3" fill="#F3D382"/>
+  <rect x="8" y="12" width="16" height="3" fill="#F3D382"/>
+  <rect x="10" y="15" width="12" height="3" fill="#F3D382"/>
+  <rect x="11" y="18" width="10" height="3" fill="#F3D382"/>
+  <rect x="9" y="21" width="5" height="3" fill="#F3D382"/>
+  <rect x="18" y="21" width="5" height="3" fill="#F3D382"/>
+  <rect x="14" y="13" width="4" height="4" fill="#FFF4D1"/>
+</svg>
