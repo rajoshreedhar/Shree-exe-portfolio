@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Menu } from "lucide-react";
+import Link from "next/link";
+import { Compass, Github, Linkedin, Menu } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 import type { ChapterMeta } from "@/data/chapters";
 import { PixelStarIcon } from "@/components/ui/PixelIcons";
@@ -57,6 +58,14 @@ export function SiteHeader({
           aria-label="Primary navigation"
           className="flex items-center gap-1 sm:gap-2"
         >
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 px-2.5 py-2 text-xs sm:text-sm font-semibold text-burgundy hover:text-burgundy-deep transition-colors"
+            title="Visit SHREE.EXE — The Little Island"
+          >
+            <Compass className="w-3.5 h-3.5" />
+            <span>Island</span>
+          </Link>
           <a
             href="#the-quests"
             className="px-2.5 py-2 text-xs sm:text-sm font-medium text-ink hover:text-burgundy transition-colors"

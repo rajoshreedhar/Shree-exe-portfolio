@@ -41,7 +41,7 @@ export default async function ProjectCaseStudyPage({
       <header className="sticky top-0 z-30 border-b border-ink/15 bg-porcelain/95 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
           <Link
-            href="/#the-quests"
+            href="/portfolio#the-quests"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-ink hover:text-burgundy transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -230,14 +230,14 @@ export default async function ProjectCaseStudyPage({
 
         <div className="mt-16 pt-8 border-t border-ink/15 flex flex-wrap items-center justify-between gap-4">
           <Link
-            href="/#the-quests"
+            href="/portfolio#the-quests"
             className="inline-flex items-center gap-2 min-h-[44px] px-5 py-3 bg-ink text-porcelain text-xs font-semibold uppercase tracking-wider hover:bg-burgundy transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Quests
           </Link>
           <Link
-            href="/#the-next-level"
+            href="/portfolio#the-next-level"
             className="inline-flex items-center gap-2 min-h-[44px] px-5 py-3 border border-ink bg-porcelain-soft text-ink text-xs font-semibold uppercase tracking-wider hover:bg-powder-pink/40 transition-colors"
           >
             Contact Rajoshree →

@@ -450,7 +450,12 @@ li {
   .animate-dialogue-pop,
   .animate-sparkle-once,
   .animate-twinkle,
-  .animate-arcade-blink {
+  .animate-arcade-blink,
+  .island-cloud-slow,
+  .island-water-shimmer,
+  .island-tide-dot,
+  .island-panel-enter,
+  .island-line-fade {
     animation: none !important;
   }
   * {
@@ -474,4 +479,103 @@ li {
 
 .skip-link:focus {
   top: 1rem;
+}
+
+/* ==========================================================================
+   SHREE.EXE — The Little Island (First Morning Prototype) Scoped Styles
+   All animations are GPU-composited (transform/opacity) and reduced-motion safe.
+   ========================================================================== */
+
+.game-canvas-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.game-canvas-container canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+@keyframes islandCloudDrift {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+@keyframes islandWaterShimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 0.92;
+    transform: translateX(5px);
+  }
+}
+
+@keyframes islandTideDot {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes islandPanelEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes islandLineFade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.island-cloud-slow {
+  animation: islandCloudDrift 11s ease-in-out infinite;
+  will-change: transform;
+}
+
+.island-water-shimmer {
+  animation: islandWaterShimmer 4.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.island-tide-dot {
+  animation: islandTideDot 1.1s ease-in-out infinite;
+}
+
+.island-panel-enter {
+  animation: islandPanelEnter 200ms var(--ease-editorial) both;
+}
+
+.island-line-fade {
+  animation: islandLineFade 180ms var(--ease-editorial) both;
 }

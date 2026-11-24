@@ -1,6 +1,6 @@
 import React from "react";
-import { PortfolioWorld } from "@/components/PortfolioWorld";
+import { HomeExperience } from "@/components/landing/HomeExperience";
 
 export default function HomePage() {
-  return <PortfolioWorld />;
+  return <HomeExperience />;
 }
